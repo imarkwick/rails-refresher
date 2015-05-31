@@ -1,7 +1,12 @@
-%a(href='/roasts/new') Add a roast
-
-- if @roasts.any?
-	- @roasts.all.each do |roast|
-		%li= link_to roast.name, roast_path(roast)
-- else
-	%h1 No roasts yet!
+.row
+	.three.columns
+		%a(href='/roasts/new') Add a roast
+%br
+.row
+	- if @roasts.any?
+		- @roasts.all.each do |roast|
+			.row
+				.three.columns
+					%li= link_to roast.name, roast_path(roast)
+	- else
+		%h1 No roasts yet!
