@@ -2,6 +2,6 @@
 
 - if @roasts.any?
 	- @roasts.all.each do |roast|
-		%h2= roast.name
+		%li= link_to roast.name, roast_path(roast)
 - else
 	%h1 No roasts yet!

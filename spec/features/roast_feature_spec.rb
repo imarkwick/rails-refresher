@@ -33,4 +33,15 @@ feature 'roasts' do
 		end
 	end
 
+	context 'viewing roasts' do
+		let!(:beef){Roast.create(name: 'Roast Beef')}
+
+		scenario 'lets a user view a roast' do
+			visit '/roasts'
+			click_link 'Roast Beef'
+			expect(page).to have_content 'Roast Beef'
+			expect(current_path).to eq "/roasts/#{beef.id}"
+		end
+	end
+
 end

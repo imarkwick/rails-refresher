@@ -17,4 +17,8 @@ class RoastsController < ApplicationController
 		params.require(:roast).permit(:name)
 	end
 
+	def show
+		@roast = Roast.find(params[:id])
+	end
+
 end
