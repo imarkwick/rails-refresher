@@ -1,2 +1,7 @@
-No roasts yet!
 %a(href='#') Add a roast
+
+- if @roasts.any?
+	- @roasts.all.each do |roast|
+		%h2= roast.name
+- else
+	%h1 No roasts yet!

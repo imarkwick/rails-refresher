@@ -10,4 +10,16 @@ feature 'roasts' do
 		end
 	end
 
+	context 'roasts have been added' do
+		before do
+			Roast.create(name: 'Roast Chicken')
+		end
+
+		scenario 'display roasts' do
+			visit '/roasts'
+			expect(page).to have_content('Roast Chicken')
+			expect(page).not_to have_content('No roasts yet!')
+		end
+	end
+
 end
