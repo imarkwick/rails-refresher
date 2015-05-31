@@ -1,4 +1,10 @@
-= form_for @roast do |f|
-	= f.label :name
-	= f.text_field :name
-	%input{:type => 'submit', :value => 'Add Roast'}
+.row
+	.three.columns
+		= form_for @roast do |f|
+			= f.label :name
+			= f.text_field :name
+			%input{:type => 'submit', :value => 'Add Roast', :class => 'button'}
+
+.row
+	.three.columns
+		%a{:href => '/roasts', :class => 'button'} All Roasts

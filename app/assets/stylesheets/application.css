@@ -19,3 +19,11 @@
 @import "foundation_and_overrides";
 
 /* Add imports of custom sass/scss files here */
+
+li {
+	list-style-type: none;
+}
+
+a#add {
+	margin-top: 1rem;
+}

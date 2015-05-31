@@ -1,6 +1,6 @@
 .row
 	.three.columns
-		%a(href='/roasts/new') Add a roast
+		%a{:href => '/roasts/new', :class => 'button', :id => 'add'} Add a roast
 %br
 .row
 	- if @roasts.any?
