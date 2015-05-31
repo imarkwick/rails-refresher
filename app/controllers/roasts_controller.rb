@@ -4,4 +4,17 @@ class RoastsController < ApplicationController
 		@roasts = Roast.all
 	end
 
+	def new
+		@roast = Roast.new
+	end
+
+	def create
+		@roast = Roast.create(roast_params)
+		redirect_to '/roasts'
+	end
+
+	def roast_params
+		params.require(:roast).permit(:name)
+	end
+
 end

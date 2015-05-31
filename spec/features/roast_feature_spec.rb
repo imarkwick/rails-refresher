@@ -22,4 +22,15 @@ feature 'roasts' do
 		end
 	end
 
+	context 'creating roasts' do
+		scenario 'prompts user to fill out a form, then displays the new roast' do
+			visit '/roasts'
+			click_link 'Add a roast'
+			fill_in 'Name', with: 'Roast Chicken'
+			click_button 'Add Roast'
+			expect(page).to have_content 'Roast Chicken'
+			expect(current_path).to eq '/roasts'
+		end
+	end
+
 end
